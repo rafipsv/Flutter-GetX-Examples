@@ -11,10 +11,20 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: const Text("Show Alert"),
+          child: const Text("Show Bottom Sheet"),
           onPressed: () {
-            Get.defaultDialog(
-              title: "GetX Flutter",
+            Get.bottomSheet(
+              Container(
+                color: Colors.white,
+                child: const Center(
+                  child: Text(
+                    "Bottom Sheet",
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ),
             );
           },
         ),
