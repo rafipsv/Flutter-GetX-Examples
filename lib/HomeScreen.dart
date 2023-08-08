@@ -9,24 +9,27 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("GetX Tutorial"),
+      ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text("Show Bottom Sheet"),
-          onPressed: () {
-            Get.bottomSheet(
-              Container(
-                color: Colors.white,
-                child: const Center(
-                  child: Text(
-                    "Bottom Sheet",
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.changeTheme(ThemeData.light());
+              },
+              child: const Text("Light"),
+            ),
+            const SizedBox(width: 30),
+            ElevatedButton(
+              onPressed: () {
+                Get.changeTheme(ThemeData.dark());
+              },
+              child: const Text("Dark"),
+            ),
+          ],
         ),
       ),
     );
