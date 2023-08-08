@@ -9,10 +9,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.snackbar("Muhammad", "Testing Snackbar");
-        },
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("Show Alert"),
+          onPressed: () {
+            Get.defaultDialog(
+              title: "GetX Flutter",
+            );
+          },
+        ),
       ),
     );
   }
