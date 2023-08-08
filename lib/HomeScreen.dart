@@ -10,7 +10,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.snackbar("Muhammad", "Testing Snackbar");
+        },
       ),
     );
   }
