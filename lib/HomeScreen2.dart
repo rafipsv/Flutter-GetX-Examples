@@ -1,24 +1,23 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/HomeScreen2.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen2 extends StatelessWidget {
+  const HomeScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Screen"),
+        title: const Text("Home Screen 2"),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Get.to(const HomeScreen2());
+            Get.back();
           },
-          child: const Text("Go To Page 2"),
+          child: const Text("Back"),
         ),
       ),
     );
