@@ -15,24 +15,36 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home Screen"),
       ),
-      body: Center(
-        child: Obx(
-          () {
-            return Text(
-              "Clicked: ${counterController.counter} Times",
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-              ),
-            );
-          },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counterController.increment();
-        },
-        child: const Icon(Icons.add),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Obx(
+              () {
+                return Container(
+                  height: 200,
+                  width: 200,
+                  color: Colors.red.withOpacity(
+                    counterController.opacity.toDouble(),
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 30),
+          Center(
+            child: Obx(
+              () {
+                return Slider(
+                  value: counterController.opacity.value,
+                  onChanged: (value) {
+                    counterController.changeOpacity(value);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
